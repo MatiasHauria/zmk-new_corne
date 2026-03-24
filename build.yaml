@@ -1,17 +1,16 @@
----
 include:
-#  - board: eyelash_corne_left
-#    shield: nice_view
-#    #snippet: zmk-usb-logging    # Uncomment to log over USB.
-  - board: eyelash_corne_right
-    shield: nice_view
-    #snippet: zmk-usb-logging
+  # Lado Izquierdo con Soporte para ZMK Studio y el Mod de Pantalla
   - board: eyelash_corne_left
-    shield: nice_view
+    shield: nice_view_custom
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
-    artifact-name: eyelash_corne_studio_left
+    artifact-name: eyelash_corne_left_with_mod
+
+  # Lado Derecho con el Mod de Pantalla
+  - board: eyelash_corne_right
+    shield: nice_view_custom
+    artifact-name: eyelash_corne_right_with_mod
+
+  # Archivo para resetear el teclado (muy útil si algo falla)
   - board: nice_nano_v2
     shield: settings_reset
-    #snippet: zmk-usb-logging
- 
